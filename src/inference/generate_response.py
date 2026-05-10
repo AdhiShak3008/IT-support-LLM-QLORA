@@ -17,12 +17,23 @@ def generate_response(prompt):
 
     start_time = time.time()
 
-    # Placeholder generation logic
-    response = f"[Simulated Response]\n\nTroubleshooting steps for:\n{prompt}"
+    # Placeholder response
+    response = f"""
+[Simulated Response]
+
+Troubleshooting steps for:
+{prompt}
+
+1. Check logs.
+2. Verify configuration.
+3. Restart related services.
+4. Validate connectivity.
+5. Re-test after changes.
+"""
 
     end_time = time.time()
 
-    latency = end_time - start_time
+    latency = round(end_time - start_time, 4)
 
     return response, latency
 
@@ -33,13 +44,13 @@ def main():
 
     response, latency = generate_response(prompt)
 
-    print("\nPrompt:")
+    print("\nPROMPT:\n")
     print(prompt)
 
-    print("\nResponse:")
+    print("\nRESPONSE:\n")
     print(response)
 
-    print(f"\nLatency: {latency:.4f} seconds")
+    print(f"\nLatency: {latency} seconds")
 
 
 if __name__ == "__main__":
