@@ -1,8 +1,11 @@
 from datasets import load_dataset
 
-MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.2"
+from src.utils.load_config import load_config
 
-DATASET_PATH = "data/processed/formatted_dataset.json"
+config = load_config("configs/training_config.yaml")
+
+MODEL_NAME = config["model"]["name"]
+DATASET_PATH = config["dataset"]["path"]
 
 
 def main():

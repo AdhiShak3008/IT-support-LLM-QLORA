@@ -1,0 +1,22 @@
+model:
+  name: mistralai/Mistral-7B-Instruct-v0.2
+
+dataset:
+  path: data/processed/formatted_dataset.json
+
+training:
+  epochs: 3
+  batch_size: 4
+  learning_rate: 2e-4
+  max_seq_length: 1024
+  gradient_accumulation_steps: 4
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+
+quantization:
+  load_in_4bit: true
+  quant_type: nf4
+  compute_dtype: float16
