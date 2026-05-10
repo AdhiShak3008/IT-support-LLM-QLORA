@@ -1,0 +1,77 @@
+[
+  {
+    "instruction": "Troubleshoot DNS resolution failure",
+    "input": "User cannot access internal services; nslookup returns SERVFAIL.",
+    "output": "1. Verify network connectivity to DNS server.\n2. Check /etc/resolv.conf or system DNS settings.\n3. Restart DNS client service (e.g., systemd-resolved).\n4. Validate DNS server health and logs.\n5. Test resolution using alternate DNS server.\n6. Check for firewall rules blocking port 53."
+  },
+  {
+    "instruction": "Resolve Docker daemon not starting",
+    "input": "Docker service fails with 'Failed to start Docker Application Container Engine'.",
+    "output": "1. Run 'systemctl status docker' to identify error.\n2. Check journal logs using 'journalctl -u docker'.\n3. Verify disk space availability.\n4. Ensure /var/lib/docker is not corrupted.\n5. Restart containerd service.\n6. Reinstall Docker if configuration is broken."
+  },
+  {
+    "instruction": "Fix Kubernetes pod CrashLoopBackOff",
+    "input": "Pod repeatedly restarts with CrashLoopBackOff status.",
+    "output": "1. Run 'kubectl logs <pod>' to inspect application errors.\n2. Use 'kubectl describe pod' to check events.\n3. Validate environment variables and secrets.\n4. Check resource limits (CPU/memory).\n5. Confirm container image integrity.\n6. Investigate readiness/liveness probe failures."
+  },
+  {
+    "instruction": "Resolve PostgreSQL connection refused",
+    "input": "Application cannot connect to PostgreSQL; error: connection refused.",
+    "output": "1. Verify PostgreSQL service is running.\n2. Check listening address in postgresql.conf.\n3. Validate port (default 5432).\n4. Review pg_hba.conf for access rules.\n5. Ensure firewall allows inbound traffic.\n6. Confirm database host is reachable."
+  },
+  {
+    "instruction": "Fix MySQL authentication failure",
+    "input": "User receives 'Access denied for user' when connecting to MySQL.",
+    "output": "1. Verify username and password.\n2. Check user privileges using 'SHOW GRANTS'.\n3. Ensure correct host is specified.\n4. Reset password if necessary.\n5. Flush privileges using 'FLUSH PRIVILEGES'.\n6. Confirm authentication plugin compatibility."
+  },
+  {
+    "instruction": "Troubleshoot SSH connection timeout",
+    "input": "SSH connection to server times out with no response.",
+    "output": "1. Verify server is reachable via ping.\n2. Check if port 22 is open using 'nc' or 'telnet'.\n3. Validate firewall rules on client and server.\n4. Ensure SSH service is running.\n5. Review /var/log/auth.log for issues.\n6. Confirm correct IP address and routing."
+  },
+  {
+    "instruction": "Fix Git merge conflict",
+    "input": "Git merge fails due to conflicting changes in multiple files.",
+    "output": "1. Run 'git status' to identify conflicting files.\n2. Open files and resolve conflict markers manually.\n3. Stage resolved files using 'git add'.\n4. Complete merge with 'git commit'.\n5. Run tests to validate integration.\n6. Push changes to remote repository."
+  },
+  {
+    "instruction": "Resolve CI/CD pipeline failure",
+    "input": "Pipeline fails during build stage with dependency errors.",
+    "output": "1. Review pipeline logs for failed step.\n2. Verify dependency versions in configuration.\n3. Clear build cache if applicable.\n4. Check network access to package repositories.\n5. Ensure environment variables are set correctly.\n6. Re-run pipeline after fixes."
+  },
+  {
+    "instruction": "Fix disk space exhaustion on Linux server",
+    "input": "Server reports 100% disk usage and applications are failing.",
+    "output": "1. Run 'df -h' to identify full partitions.\n2. Use 'du -sh *' to locate large directories.\n3. Clear temporary files (/tmp, logs).\n4. Rotate or delete old logs.\n5. Remove unused packages.\n6. Expand disk or partition if necessary."
+  },
+  {
+    "instruction": "Troubleshoot systemctl service failure",
+    "input": "Custom service fails to start using systemctl.",
+    "output": "1. Run 'systemctl status <service>' for error details.\n2. Check logs using 'journalctl -u <service>'.\n3. Validate service unit file syntax.\n4. Ensure required dependencies are available.\n5. Verify file permissions and paths.\n6. Reload daemon using 'systemctl daemon-reexec'."
+  },
+  {
+    "instruction": "Resolve AWS S3 access denied error",
+    "input": "Application receives AccessDenied when accessing S3 bucket.",
+    "output": "1. Verify IAM user/role permissions.\n2. Check bucket policy for restrictions.\n3. Confirm correct AWS region.\n4. Validate access keys and secret keys.\n5. Ensure no explicit deny policies exist.\n6. Test access using AWS CLI."
+  },
+  {
+    "instruction": "Fix AWS credential configuration issue",
+    "input": "AWS CLI returns 'Unable to locate credentials'.",
+    "output": "1. Run 'aws configure' to set credentials.\n2. Verify ~/.aws/credentials file.\n3. Check environment variables (AWS_ACCESS_KEY_ID).\n4. Ensure IAM role is attached (for EC2).\n5. Validate profile configuration.\n6. Retry command with correct profile."
+  },
+  {
+    "instruction": "Troubleshoot WiFi connection instability",
+    "input": "User experiences intermittent WiFi disconnects.",
+    "output": "1. Check signal strength and interference.\n2. Restart router and client device.\n3. Update network drivers.\n4. Change WiFi channel on router.\n5. Verify DHCP lease settings.\n6. Test with another network to isolate issue."
+  },
+  {
+    "instruction": "Fix proxy configuration issue",
+    "input": "Applications cannot access internet behind corporate proxy.",
+    "output": "1. Verify proxy settings in environment variables.\n2. Check application-specific proxy configuration.\n3. Ensure proxy server is reachable.\n4. Validate authentication credentials.\n5. Test connectivity using curl with proxy.\n6. Review proxy logs for blocked requests."
+  },
+  {
+    "instruction": "Resolve Kubernetes service not reachable",
+    "input": "ClusterIP service is not accessible from within the cluster.",
+    "output": "1. Verify service definition and selector labels.\n2. Check endpoints using 'kubectl get endpoints'.\n3. Ensure pods are running and ready.\n4. Test connectivity using curl inside a pod.\n5. Inspect kube-proxy logs.\n6. Validate network policies are not blocking traffic."
+  }
+]
