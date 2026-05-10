@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "prompt": "User cannot connect to PostgreSQL database after changing password."
+  },
+  {
+    "id": 2,
+    "prompt": "Docker container exits immediately after startup."
+  },
+  {
+    "id": 3,
+    "prompt": "Kubernetes pod stuck in CrashLoopBackOff state."
+  },
+  {
+    "id": 4,
+    "prompt": "Git push fails with permission denied (publickey)."
+  },
+  {
+    "id": 5,
+    "prompt": "VPN authentication succeeds but no internal resources are accessible."
+  }
+]
